@@ -10,6 +10,7 @@
     "validate": "svelte-check"
   },
   "devDependencies": {
+    "@danmarshall/deckgl-typings": "^4.9.2",
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@rollup/plugin-replace": "^2.3.4",
@@ -20,7 +21,6 @@
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
     "node-fetch": "^2.6.1",
-    "node-sass": "^5.0.0",
     "postcss": "^8.1.14",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.0.0",
@@ -37,7 +37,18 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
-    "svelte-spa-router": "^3.1.0"
+    "@deck.gl/core": "^8.4.17",
+    "@deck.gl/layers": "^8.4.17",
+    "@types/leaflet": "^1.7.3",
+    "d3-array": "^3.0.1",
+    "d3-scale": "^4.0.0",
+    "deck.gl": "^8.4.17",
+    "leaflet": "^1.7.1",
+    "mapbox-gl": "^2.1.1",
+    "ol": "^6.5.0",
+    "ol-mapbox-style": "^6.3.2",
+    "svelte-spa-router": "^3.1.0",
+    "uuid": "^8.3.2"
   },
   "author": "sebastian-meier",
   "license": "MIT"

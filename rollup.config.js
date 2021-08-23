@@ -34,11 +34,15 @@ function serve() {
 
 export default {
 	input: 'src/main.ts',
+	external: ['deck'],
 	output: {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/build/bundle.js'
+		file: 'public/build/bundle.js',
+		globals: {
+			deck: 'deck'
+		}
 	},
 	plugins: [
 		svelte({
@@ -90,6 +94,7 @@ export default {
 		// instead of npm run dev), minify
 		production && terser(),
 		replace({
+			preventAssignment: true,
       // stringify the object       
       __global: JSON.stringify({
         env: {
@@ -101,5 +106,11 @@ export default {
 	],
 	watch: {
 		clearScreen: false
+	},
+	onwarn: function(warning, superOnWarn) {
+		if (warning.code === 'THIS_IS_UNDEFINED') {
+			return;
+		}
+		superOnWarn(warning);
 	}
 };
